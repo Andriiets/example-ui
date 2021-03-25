@@ -42,13 +42,126 @@ $ui-theme: mat-light-theme((
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
+@function mat-typography-config(
+  $font-family:   'Roboto, "Helvetica Neue", sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $display-3:     mat-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $display-2:     mat-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(17px, 17px, 500), // mat-typography-level(14px, 14px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(inherit, 1.125, 400)
+) {
+
+  // Declare an initial map with all of the levels.
+  $config: (
+          display-4:      $display-4,
+          display-3:      $display-3,
+          display-2:      $display-2,
+          display-1:      $display-1,
+          headline:       $headline,
+          title:          $title,
+          subheading-2:   $subheading-2,
+          subheading-1:   $subheading-1,
+          body-2:         $body-2,
+          body-1:         $body-1,
+          caption:        $caption,
+          button:         $button,
+          input:          $input,
+  );
+
+  // Loop through the levels and set the `font-family` of the ones that don't have one to the base.
+  // Note that Sass can't modify maps in place, which means that we need to merge and re-assign.
+  @each $key, $level in $config {
+    @if map-get($level, font-family) == null {
+      $new-level: map-merge($level, (font-family: $font-family));
+      $config: map-merge($config, ($key: $new-level));
+    }
+  }
+
+  // Add the base font family to the config.
+  @return map-merge($config, (font-family: $font-family));
+}
+
 @include mat-core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ui-primary: mat-palette($mat-indigo);
-$ui-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$primary: (
+        50: #e8eaf6,
+        100: #c5cae9,
+        200: #9fa8da,
+        300: #7986cb,
+        400: #5c6bc0,
+        500: #3B4562, // #3f51b5,
+        600: #3949ab,
+        700: #303f9f,
+        800: #283593,
+        900: #1a237e,
+        A100: #8c9eff,
+        A200: #536dfe,
+        A400: #3d5afe,
+        A700: #304ffe,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $light-primary-text,
+                400: $light-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $light-primary-text,
+                A400: $light-primary-text,
+                A700: $light-primary-text,
+        )
+);
+$accent: (
+        50: #fce4ec,
+        100: #f8bbd0,
+        200: #f48fb1,
+        300: #f06292,
+        400: #ec407a,
+        500: #e91e63,
+        600: #d81b60,
+        700: #c2185b,
+        800: #ad1457,
+        900: #880e4f,
+        A100: #ff80ab,
+        A200: #9EABBF, // #ff4081,
+        A400: #f50057,
+        A700: #c51162,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $dark-primary-text,
+                400: $dark-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $light-primary-text,
+                A400: $light-primary-text,
+                A700: $light-primary-text,
+        )
+);
+$ui-primary: mat-palette($primary);
+$ui-accent: mat-palette($accent, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $ui-warn: mat-palette($mat-red);

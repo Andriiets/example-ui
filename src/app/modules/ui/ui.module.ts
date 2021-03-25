@@ -6,12 +6,14 @@ import { UiComponent } from './ui.component';
 import { SharedModule } from '../../shared/shared.module';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
+import { ButtonsComponent } from './buttons/buttons.component';
 
 @NgModule({
   declarations: [
     UiComponent,
     TypographyComponent,
     IconsComponent,
+    ButtonsComponent,
   ],
   imports: [
     CommonModule,
