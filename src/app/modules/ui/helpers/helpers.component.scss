@@ -1,0 +1,13 @@
+.show-helpers {
+  & > div {
+    background: red;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+
+    & > div {
+      background: yellow;
+      height: 100%;
+    }
+  }
+}

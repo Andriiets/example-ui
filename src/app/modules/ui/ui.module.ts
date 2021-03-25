@@ -7,6 +7,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { HelpersComponent } from './helpers/helpers.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
     TypographyComponent,
     IconsComponent,
     ButtonsComponent,
+    HelpersComponent,
   ],
   imports: [
     CommonModule,
