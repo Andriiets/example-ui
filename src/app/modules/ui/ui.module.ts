@@ -8,6 +8,7 @@ import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { HelpersComponent } from './helpers/helpers.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HelpersComponent } from './helpers/helpers.component';
     IconsComponent,
     ButtonsComponent,
     HelpersComponent,
+    TableComponent,
   ],
   imports: [
     CommonModule,

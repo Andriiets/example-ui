@@ -1,3 +1,99 @@
+<div fxLayout="row wrap"
+     fxLayoutAlign="start start"
+     class="yyy">
+  <div fxFlex="100%"
+       fxFlex.gt-xs="0 1 calc(50% + 24px)"
+       style="background: blue">
+    <div fxLayout="row wrap"
+         fxLayoutGap.gt-xs="24px">
+      <div *ngFor="let number of [1,2,3]"
+           fxFlex="100%"
+           fxFlex.gt-sm="0 1 calc(100%/2 - 24px)"
+           fxFlex.gt-md="0 1 calc(100%/3 - 24px)"
+           style="background: red"
+           class="mb-8"
+      >{{number}}</div>
+      <div *ngFor="let number of [4]"
+           fxFlex="100%"
+           fxFlex.gt-sm="0 1 calc(100%/2 - 24px)"
+           fxFlex.gt-md="0 1 calc(100%/3 - 24px)"
+           style="background: red"
+           ngClass.gt-xs="mb-8 mr-24"
+      >{{number}}</div>
+    </div>
+  </div>
+
+  <div fxFlexOffset.gt-sm="25%"
+       fxFlex="100%"
+       fxFlex.gt-xs="0 1 calc(100%/2 - 24px)"
+       fxFlex.gt-sm="0 1 calc(100%/4 - 24px)"
+
+       style="background: blue">
+    <div fxLayout="row wrap"
+         fxLayoutAlign="start start">
+      <div fxFlex="100%"
+           fxFlex.gt-sm="50%"
+           style="background: red"
+           class="mb-8"
+      >1</div>
+      <div fxFlex="100%"
+           style="background: red"
+           class="mb-8"
+      >2</div>
+    </div>
+  </div>
+</div>
+
+
+<div fxLayout="row"
+     fxLayoutGap="24px"
+     class="yyy">
+  <div fxFlex="50%"
+       class="mb-32 pr-0"
+       style="background: blue">
+
+    <div fxLayout="row wrap" fxLayoutGap="24px">
+      <div *ngFor="let number of [1,2,3]"
+           fxFlex="0 1 calc(100%/3 - 24px)"
+           style="background: red"
+           class="mb-8"
+      >{{number}}</div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="24px">
+      <div *ngFor="let number of [1,2,3]"
+           fxFlex="0 1 calc(100%/3 - 24px)"
+           style="background: red"
+           class="mb-8"
+      >{{number}}</div>
+    </div>
+  </div>
+  <div fxFlex="50%"
+       style="background: blue">2
+  </div>
+</div>
+
+<div fxLayout="row"
+     class="yyy">
+  <div fxFlex="calc(100%/2 + 24px)"
+       class="mb-32 mr--24"
+       style="background: blue">
+
+    <div fxLayout="row wrap" fxLayoutGap="24px">
+      <div *ngFor="let number of [1,2,3,4,5]"
+           fxFlex="0 1 calc(33.3% - 24px)"
+           style="background: red"
+           class="mb-32"
+      >{{number}}</div>
+    </div>
+  </div>
+  <div fxFlex="calc(100%/2 - 24px)"
+       style="background: blue">2
+  </div>
+</div>
+
+
+
+
 <div class="mat-display-4">.mat-display-4</div>
 <div class="mat-display-3">.mat-display-3</div>
 <div class="mat-display-2">.mat-display-2</div>

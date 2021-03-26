@@ -162,9 +162,92 @@
 <mat-divider></mat-divider>
 
 <section class="mb-16">
+
+    <div fxLayout="row"
+         fxLayoutGap="24px">
+        <div fxFlex="calc(100%/2 - 24px)"
+             class="mb-32 mr--24"
+             style="background: blue">1
+
+            <div fxLayout="row wrap">
+
+
+                <div *ngFor="let number of [1,2,3,4,5]"
+                     fxFlex="0 1 calc(100%/3 - 24*2px)"
+                     style="background: red"
+                     class="mb-32"
+                >{{number}}</div>
+
+
+            </div>
+
+
+            <div fxLayout="row">
+                <div fxFlex="0 1 calc(100%/3 - 24*2px))"
+                     class="mb-32"
+                     style="background: red"
+                >4
+                </div>
+            </div>
+        </div>
+        <div fxFlex="calc(100%/2 - 24px)"
+             style="background: blue"
+        >2
+        </div>
+    </div>
+
+    <div fxLayout="row"
+         fxLayoutGap="24px">
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >1
+        </div>
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >2
+        </div>
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >3
+        </div>
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >4
+        </div>
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >5
+        </div>
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >6
+        </div>
+    </div>
+
+
+    <div fxLayout="row"
+         fxLayoutGap="24px">
+        <div fxFlex="50%"
+             style="background: red"
+        >1
+        </div>
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >2
+        </div>
+    </div>
+
     <h3>FAB</h3>
     <div fxLayout="row"
          fxLayoutGap="16px">
+        <div fxFlex="calc(100%/6 - 24px*5)"
+             style="background: red"
+        >
+            tttt
+        </div>
+        <div fxFlex>
+
+        </div>
         <button mat-fab
                 color="primary"
                 aria-label="Example icon button with a delete icon">
